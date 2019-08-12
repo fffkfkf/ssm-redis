@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
-	<bean id="CategoryService" class ="com.itheima.anli04_serviceimple.CategoryServiceImpl"></bean>
-	<bean id="OrderService" class ="com.itheima.anli04_serviceimple.OrderServiceImpl"></bean>
-	<bean id="OrderDao" class ="com.itheima.anli06_daoImpl.OrderDaoImpl"></bean>
-	<bean id="AdminService" class ="com.itheima.anli04_serviceimple.AdminServiceImpl"></bean>
-	<bean id="AdminDao" class ="com.itheima.anli06_daoImpl.AdminDaoImpl"></bean>
+	<bean id="CategoryService" class ="com.dell.anli04_serviceimple.CategoryServiceImpl"></bean>
+	<bean id="OrderService" class ="com.dell.anli04_serviceimple.OrderServiceImpl"></bean>
+	<bean id="OrderDao" class ="com.dell.anli06_daoImpl.OrderDaoImpl"></bean>
+	<bean id="AdminService" class ="com.dell.anli04_serviceimple.AdminServiceImpl"></bean>
+	<bean id="AdminDao" class ="com.dell.anli06_daoImpl.AdminDaoImpl"></bean>
 </beans>
