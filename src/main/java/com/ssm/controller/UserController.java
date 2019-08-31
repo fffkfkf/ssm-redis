@@ -1,16 +1,13 @@
 package com.ssm.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ssm.pojo.User;
 import com.ssm.service.UserService;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,9 +20,9 @@ public class UserController {
     @RequestMapping(value = "/user")
     public String getUserById(Model model, HttpServletRequest request) {
         User user = userService.selectByPrimaryKey(1);
-        System.out.println(user+"----------------------------------------"+user.getPname());
+        System.out.println(user + "----------------------------------------" + user.getPname());
         model.addAttribute("cc", user);
-        request.getSession().setAttribute("u",user);
+        request.getSession().setAttribute("u", user);
         return "main";
     }
 }

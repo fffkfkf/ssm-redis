@@ -7,12 +7,25 @@
 
     <!--扫描service包(包含子包)下所有使用注解的类型-->
     <context:component-scan base-package="com.ssm.service"/>
-  <!-- 配置redis客户端单机版 -->
+  <!-- 配置redis客户端单机版    -->
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
-        <constructor-arg name="host" value="127.0.0.1"/>
-        <constructor-arg name="port" value="6379"/>
+
+        <constructor-arg name="poolConfig" ref="jedisPoolConfig" />
+        <constructor-arg name="host" value="192.168.209.129" />
+        <constructor-arg name="port" value="6379" type="int" />
+        <constructor-arg name="timeout" value="100" type="int" />
+        <constructor-arg name="password" value="123" />
+        <constructor-arg name="database" value="0" type="int" />
+
+
     </bean>
     <!-- 配置redis客户端实现类 -->
     <bean id="jedisClientSingle" class="com.ssm.jediscomp.impl.JedisClientSingle"/>
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="300" /> <!-- 最大能够保持idel状态的对象数  -->
+        <property name="maxTotal" value="60000" /> <!-- 最大分配的对象数 -->
+        <property name="testOnBorrow" value="true" /> <!-- 当调用borrow Object方法时，是否进行有效性检查 -->
+    </bean>
 
 </beans>

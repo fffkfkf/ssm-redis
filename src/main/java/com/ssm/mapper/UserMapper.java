@@ -2,14 +2,15 @@ package com.ssm.mapper;
 
 
 import java.util.List;
+
 import com.ssm.pojo.User;
 
 public interface UserMapper {
-	
-	List<User> list();
-	
-	User selectById(Integer id);
-	
+
+    List<User> list();
+
+    User selectById(Integer id);
+
 //    int countByExample(UserExample example);
 //
 //    int deleteByExample(UserExample example);
